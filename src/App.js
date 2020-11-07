@@ -9,17 +9,32 @@ import About from './components/About'
 import Home from './components/Home'
 import Book from './components/Book'
 
-// const StyledHeader = styled.header`
-
-// `
+const blankBook = {
+  hero:'',
+  profession:'',
+  prince:false,
+  princess:false,
+  pname:'',
+  villain:''
+}
 
 function App() {
   const [pink, setPink] = useState(false)
+  const [story, setStory] = useState(blankBook)
 
   function makeitpink(e){
     e.preventDefault();
     setPink(!pink) 
   }
+
+  const onSubmit = (event) => {
+      event.preventDefault()
+  }
+
+  const onChange = (event) => {
+    const value = event.target.value
+    setStory({...story, [event.target.name]: value})
+}
 
 
   return (
@@ -48,13 +63,13 @@ function App() {
             <About />
           </Route>
           <Route path="/book">
-                <Book  />
+                <Book props={story}  />
             </Route>
           <Route path="/contact">
             <Contact />
           </Route>
           <Route path="/main">
-            <Main />
+            <Main onSubmit={onSubmit} onChange={onChange} story={story}/>
           </Route>
           <Route path="/">
             <Home />

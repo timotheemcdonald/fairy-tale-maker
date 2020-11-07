@@ -13,60 +13,22 @@ text-align:center;
 `
 
 
-const blankBook = {
-    hero:'',
-    profession:'',
-    prince:false,
-    princess:false,
-    pname:'',
-    villain:''
-}
-
-
-
-function Main(){
-
-    const [story, setStory] = useState(blankBook)
-    const [book, setBook] = useState({})
-
-    const onSubmit = (event) => {
-        event.preventDefault()
-
-        const newStory = {
-            hero:story.hero,
-            profession:story.profession,
-            prince:story.prince,
-            princess:story.princess,
-            pname:story.pname,
-            villain:story.villain
-        }
-        setBook(newStory)
-    }
-
-    const onChange = (event) => {
-        const value = event.target.value
-        setStory({...story, [event.target.name]: value})
-    }
-
-    const checkboxChange = (event) => {
-        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
-        setStory({...story, [event.target.name]:event.target.value})
-    }
-
+function Main(props){
+    console.log('props in main', props)
 
     return(
         <Div>
             <h2>Let's Make Your Fairy Tale!</h2>
 
             <div>
-                <form onSubmit={onSubmit}>
+                <form onSubmit={props.onSubmit}>
                     <div>
                         <h3>What is your Hero's name?</h3>
                         <input
                         type="text"
                         name="hero"
-                        value={story.hero}
-                        onChange={onChange}
+                        value={props.story.hero}
+                        onChange={props.onChange}
                         />
                     </div>
                     <div>
@@ -74,8 +36,8 @@ function Main(){
                         <input
                         type="text"
                         name="profession"
-                        value={story.profession}
-                        onChange={onChange}
+                        value={props.story.profession}
+                        onChange={props.onChange}
                         />
                     </div>
                     <div>
@@ -84,16 +46,16 @@ function Main(){
                         <input
                         type="radio"
                         name="prince"
-                        onChange={onChange}
-                        value={story.prince === true}
+                        onChange={props.onChange}
+                        value={props.story.prince === true}
                         />
                         </label>
                         <label>Princess
                         <input
                         type="radio"
                         name="prince"
-                        onChange={onChange}
-                        value={story.princess === true}
+                        onChange={props.onChange}
+                        value={props.story.princess === true}
                         />
                         </label>
                     </div>
@@ -102,8 +64,8 @@ function Main(){
                         <input
                         type="text"
                         name="pname"
-                        value={story.pname}
-                        onChange={onChange}
+                        value={props.story.pname}
+                        onChange={props.onChange}
                         />
                     </div>
                     <div>
@@ -111,8 +73,8 @@ function Main(){
                         <input
                         type="text"
                         name="villain"
-                        value={story.villain}
-                        onChange={onChange}
+                        value={props.story.villain}
+                        onChange={props.onChange}
                         />
                     </div>
                 </form>
@@ -121,8 +83,7 @@ function Main(){
             <div>
                 <Link to="/book">Let's Read Your Fairy Tale!</Link>
             </div>
-           
-           <div>{book.hero}</div>
+         
         </Div>
     )
 }
