@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+
+
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -32,12 +36,16 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
   line-height: 1;
   box-sizing: border-box;
   font-family: 'Lancelot', cursive;
   font-size: 1.5rem;
+  color:white;
 }
+
+
 ol, ul {
 	list-style: none;
 }
@@ -56,7 +64,7 @@ table {
 
 h1 {
 	font-size: 5rem;
-	font-family: 'Cormorant Unicase', serif;
+	font-family: 'Elsie', cursive;
 }
 
 h2 {
@@ -69,5 +77,78 @@ h3 {
 
 .capital {
 	font-size: 2rem;
-	font-family: 'Cormorant Unicase', serif;
+	font-family: 'Elsie', cursive;
+}
+
+header {
+	background-color:#006ba6;
+	color:white;
+	display:flex;
+	height:15vh;
+	align-items:center;
+	justify-content:space-between;
+	padding:1rem;
+}
+
+footer {
+	background-color:#006ba6;
+	color:white;
+	display:flex;
+	height:15vh;
+	align-items:center;
+	justify-content:space-between;
+	padding:1rem;
+}
+
+
+.pink {
+	background-color: #8f2d56;
+}
+
+.blue {
+	background-color:#006ba6;
+}
+
+.pinkback {
+	background-color:#d81159;
+}
+
+.blueback {
+	background-color:#0496ff;
+}
+
+nav{
+	display:flex;
+	justify-content:flex-end;
+}
+
+nav a {
+	text-decoration:none;
+	color:white;
+	padding:1rem;
+	font-size:2rem;
+}
+
+.makeitpink {
+	color:white;
+	border:none;
+	font-size:2rem;
+	font-family: 'Lancelot', cursive;
+	padding:1rem;
+	outline:none;
+}
+
+.App {
+	height: 100vh;
+}
+
+.toggle {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:1rem;
+}
+
+.display {
+	display:none;
 }
