@@ -7,6 +7,7 @@ import Main from './components/Main'
 import Contact from './components/Contact'
 import About from './components/About'
 import Home from './components/Home'
+import Book from './components/Book'
 
 // const StyledHeader = styled.header`
 
@@ -46,6 +47,9 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
+          <Route path="/book">
+                <Book  />
+            </Route>
           <Route path="/contact">
             <Contact />
           </Route>
@@ -59,13 +63,7 @@ function App() {
       </div>
 
       <footer className={pink ? "pink" : "blue"}>
-      <div><h1>Fairy Tale Maker</h1></div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/main">Story Maker</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        </nav>
+
       </footer>
     </div>
   );

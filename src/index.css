@@ -37,6 +37,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+
 body {
   line-height: 1;
   box-sizing: border-box;
@@ -98,8 +99,8 @@ footer {
 	align-items:center;
 	justify-content:space-between;
 	padding:1rem;
+margin-top:auto;
 }
-
 
 .pink {
 	background-color:#d81159;
@@ -139,7 +140,9 @@ nav a {
 }
 
 .App {
-	height: 100vh;
+	height:100vh;
+	display:flex;
+	flex-direction:column;
 }
 
 .toggle {
